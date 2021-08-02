@@ -26,7 +26,7 @@ func init() {
 		log.Fatalf("Invalid bot parameters: %v", err)
 	}
 	addHandlers()
-
+	addIntents()
 }
 
 func main() {
@@ -58,5 +58,6 @@ func addHandlers() {
 }
 
 func addIntents() {
-	bot.Identify.Intents = discordgo.IntentsGuildMessages
+	bot.Identify.Intents = discordgo.IntentsGuildMessages |
+		discordgo.IntentsGuildMembers
 }
