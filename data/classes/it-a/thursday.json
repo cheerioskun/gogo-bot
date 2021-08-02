@@ -1,0 +1,24 @@
+{
+    "classes": [
+        {
+            "type": "lecture",
+            "subject": "Advanced Data Structures and Algorithms",
+            "shortname": "adsa",
+            "day": "Thursday",
+            "timeslots": ["4"],
+            "sections": ["it-a", "it-1", "it-2", "it-3"],
+            "faculty_name": "Mamtesh",
+            "meet_link": "https://meet.google.com/lookup/bvmqwnc5e4"
+       },
+       {
+            "type": "lab",
+            "subject": "Machine Learning",
+            "shortname": "ml",
+            "day": "Thursday",
+            "timeslots": ["7", "8"],
+            "sections": ["it-1"],
+            "faculty_name": "Unknown",
+            "meet_link": "Unknown"
+       }
+    ]
+ }

@@ -1,0 +1,46 @@
+{
+    "classes": [
+       {
+            "type": "lecture",
+            "subject": "Compiler Design",
+            "shortname": "pe",
+            "day": "Tuesday",
+            "timeslots": ["4"],
+            "sections": ["it-a", "it-1", "it-2", "it-3"],
+            "faculty_name": "Ankit Jain",
+            "meet_link": "https://meet.google.com/xqo-xnth-ipi"
+       },
+       {
+            "type": "lecture",
+            "subject": "Human Computer Interaction",
+            "shortname": "hci",
+            "day": "Tuesday",
+            "timeslots": ["5"],
+            "sections": ["it-a", "it-1", "it-2", "it-3"],
+            "faculty_name": "Unknown",
+            "meet_link": "Unknown"
+       },
+       {
+            "type": "lecture",
+            "subject": "Advanced Data Structures and Algorithms",
+            "shortname": "adsa",
+            "day": "Tuesday",
+            "timeslots": ["7"],
+            "sections": ["it-a", "it-1", "it-2", "it-3"],
+            "faculty_name": "Mamtesh",
+            "meet_link": "https://meet.google.com/lookup/bvmqwnc5e4"
+       },
+       {
+            "type": "lecture",
+            "subject": "Machine Learning",
+            "shortname": "ml",
+            "day": "Tuesday",
+            "timeslots": ["8"],
+            "sections": ["it-a", "it-1", "it-2", "it-3"],
+            "faculty_name": "Mukesh",
+            "meet_link": "https://meet.google.com/dvv-mhsk-ntg"
+       }
+
+       
+    ]
+ }

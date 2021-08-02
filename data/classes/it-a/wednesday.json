@@ -1,0 +1,54 @@
+{
+    "classes": [
+        {
+            "type": "lecture",
+            "subject": "Machine Learning",
+            "shortname": "ml",
+            "day": "Wednesday",
+            "timeslots": ["1"],
+            "sections": ["it-a", "it-1", "it-2", "it-3"],
+            "faculty_name": "Mukesh",
+            "meet_link": "https://meet.google.com/dvv-mhsk-ntg"
+       },
+       {
+            "type": "lecture",
+            "subject": "Human Computer Interaction",
+            "shortname": "hci",
+            "day": "Wednesday",
+            "timeslots": ["2"],
+            "sections": ["it-a", "it-1", "it-2", "it-3"],
+            "faculty_name": "Unknown",
+            "meet_link": "Unknown"
+       },
+       {
+            "type": "lecture",
+            "subject": "Compiler Design",
+            "shortname": "pe",
+            "day": "Wednesday",
+            "timeslots": ["3"],
+            "sections": ["it-a", "it-1", "it-2", "it-3"],
+            "faculty_name": "Ankit Jain",
+            "meet_link": "https://meet.google.com/xqo-xnth-ipi"
+       },
+       {
+            "type": "lecture",
+            "subject": "Open Elective",
+            "shortname": "oe",
+            "day": "Wednesday",
+            "timeslots": ["4"],
+            "sections": ["it-a", "it-1", "it-2", "it-3"],
+            "faculty_name": "variable",
+            "meet_link": "variable"
+       },
+       {
+            "type": "lecture",
+            "subject": "Business Management",
+            "shortname": "bm",
+            "day": "Wednesday",
+            "timeslots": ["5"],
+            "sections": ["it-a", "it-1", "it-2", "it-3"],
+            "faculty_name": "Vikas Choudhary",
+            "meet_link": "https://meet.google.com/lookup/gnajwy7z3z"
+       }
+    ]
+ }
