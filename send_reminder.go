@@ -5,10 +5,15 @@ import (
 	"time"
 
 	"github.com/bwmarrin/discordgo"
+	"github.com/profclems/go-dotenv"
 )
 
 func sendReminder(s *discordgo.Session, ch <-chan time.Time) {
-	//linkChannelID := channelFromName[CHANNEL_NAME_LINKS]
+	linkChannelID := channelFromName[CHANNEL_NAME_LINKS].ID
+	flag := dotenv.GetBool("STAGE")
+	if flag {
+		linkChannelID = dotenv.GetString("STAGE_TEST_CHANNEL")
+	}
 	for range ch {
 		log.Printf("Checking classes at %s", time.Now().String())
 		for _, class := range classes {
@@ -24,8 +29,8 @@ func sendReminder(s *discordgo.Session, ch <-chan time.Time) {
 			}
 			if toRemind {
 				log.Printf("Time to remind!")
-				//contentstring = makeRemindStringFromClass(class)
-				//s.ChannelMessageSend(linkChannelID, contentstring)
+				contentstring := makeRemindStringFromClass(class)
+				s.ChannelMessageSend(linkChannelID, contentstring)
 			}
 		}
 	}
