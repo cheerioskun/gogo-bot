@@ -1,0 +1,22 @@
+[
+	{
+		"type": "lecture",
+		"subject": "Compiler Design",
+		"shortname": "pe",
+		"day": "Monday",
+		"timeslots": ["2"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "Ankit Jain",
+		"meet_link": "https://meet.google.com/yeb-rzuu-mdk"
+	},
+	{
+		"type": "lecture",
+		"subject": "Open Elective",
+		"shortname": "oe",
+		"day": "Monday",
+		"timeslots": ["8"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "variable",
+		"meet_link": "variable"
+	}
+]

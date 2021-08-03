@@ -18,11 +18,11 @@ type Timeslot struct {
 }
 
 type Class struct {
-	ClassType        string `json:"type"`
-	SubjectName      string `json:"subject"`
-	SubjectShorthand string `json:"shortname"`
-	Weekday          string `json:"day"`
-	TimeslotNos      []int  `json:"timeslots"`
+	ClassType        string   `json:"type"`
+	SubjectName      string   `json:"subject"`
+	SubjectShorthand string   `json:"shortname"`
+	Weekday          string   `json:"day"`
+	TimeslotNos      []string `json:"timeslots"`
 	Timeslots        []*Timeslot
 	Sections         []string `json:"sections"`
 	FacultyName      string   `json:"faculty_name"`
@@ -47,6 +47,16 @@ func (ts *Timeslot) parseTime() error {
 		return fmt.Errorf("error parsing time string: %q", err)
 	}
 	ts.startMinute, err = strconv.Atoi(startTimeArray[1])
+	if err != nil {
+		log.Printf("could not parse time string")
+		return fmt.Errorf("error parsing time string: %q", err)
+	}
+	ts.endHour, err = strconv.Atoi(endTimeArray[0])
+	if err != nil {
+		log.Printf("could not parse time string")
+		return fmt.Errorf("error parsing time string: %q", err)
+	}
+	ts.endMinute, err = strconv.Atoi(endTimeArray[1])
 	if err != nil {
 		log.Printf("could not parse time string")
 		return fmt.Errorf("error parsing time string: %q", err)

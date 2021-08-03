@@ -14,6 +14,8 @@ import (
 
 var bot *discordgo.Session
 var TOKEN string
+var timeslotMap map[string]*Timeslot
+var classes []*Class
 
 // Initializes the bot on package initialization
 func init() {
@@ -26,6 +28,9 @@ func init() {
 	if err != nil {
 		log.Fatalf("Invalid bot parameters: %v", err)
 	}
+
+	unmarshalTimeSlots()
+	unmarshalClasses()
 	addHandlers()
 	addIntents()
 

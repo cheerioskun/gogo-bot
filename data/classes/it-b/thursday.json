@@ -1,0 +1,32 @@
+[
+	{
+		"type": "lab",
+		"subject": "Machine Learning",
+		"shortname": "ml",
+		"day": "Thursday",
+		"timeslots": ["1", "2"],
+		"sections": ["it-5"],
+		"faculty_name": "Unknown",
+		"meet_link": "Unknown"
+	},
+	{
+		"type": "lecture",
+		"subject": "Human Computer Interaction",
+		"shortname": "hci",
+		"day": "Thursday",
+		"timeslots": ["3"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "Ruby",
+		"meet_link": "https://meet.google.com/cng-wyhn-yci"
+	},
+	{
+		"type": "lecture",
+		"subject": "Advanced Data Structures and Algorithms",
+		"shortname": "adsa",
+		"day": "Thursday",
+		"timeslots": ["4"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "Mamtesh",
+		"meet_link": "https://meet.google.com/lookup/dmfsi3rxl6"
+	}
+]

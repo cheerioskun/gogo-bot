@@ -1,0 +1,32 @@
+[
+	{
+		"type": "lecture",
+		"subject": "Advanced Data Structures and Algorithms",
+		"shortname": "adsa",
+		"day": "Friday",
+		"timeslots": ["2"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "Mamtesh",
+		"meet_link": "https://meet.google.com/lookup/dmfsi3rxl6"
+	},
+	{
+		"type": "lecture",
+		"subject": "Open Elective",
+		"shortname": "oe",
+		"day": "Friday",
+		"timeslots": ["3"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "variable",
+		"meet_link": "variable"
+	},
+	{
+		"type": "lecture",
+		"subject": "Machine Learning",
+		"shortname": "ml",
+		"day": "Friday",
+		"timeslots": ["6"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "Mukesh",
+		"meet_link": "https://meet.google.com/sjz-kqyu-xvb"
+	}
+]

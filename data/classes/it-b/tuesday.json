@@ -1,0 +1,42 @@
+[
+	{
+		"type": "lab",
+		"subject": "Advanced Data Structures and Algorithms",
+		"shortname": "adsa",
+		"day": "Tuesday",
+		"timeslots": ["1", "2"],
+		"sections": ["it-5"],
+		"faculty_name": "M K Murmu",
+		"meet_link": "https://meet.google.com/yep-vase-uph"
+	},
+	{
+		"type": "lecture",
+		"subject": "Compiler Design",
+		"shortname": "pe",
+		"day": "Tuesday",
+		"timeslots": ["4"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "Ankit Jain",
+		"meet_link": "https://meet.google.com/yeb-rzuu-mdk"
+	},
+	{
+		"type": "lecture",
+		"subject": "Advanced Data Structures and Algorithms",
+		"shortname": "adsa",
+		"day": "Tuesday",
+		"timeslots": ["7"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "Mamtesh",
+		"meet_link": "https://meet.google.com/lookup/dmfsi3rxl6"
+	},
+	{
+		"type": "lecture",
+		"subject": "Machine Learning",
+		"shortname": "ml",
+		"day": "Tuesday",
+		"timeslots": ["8"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "Mukesh",
+		"meet_link": "https://meet.google.com/sjz-kqyu-xvb"
+	}
+]
