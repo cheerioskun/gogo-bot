@@ -14,8 +14,6 @@ import (
 
 var bot *discordgo.Session
 var TOKEN string
-var timeslotMap map[string]*Timeslot
-var classes []*Class
 
 // Initializes the bot on package initialization
 func init() {
@@ -60,8 +58,9 @@ func ready(s *discordgo.Session, r *discordgo.Ready) {
 	if err != nil {
 		return
 	}
-	reminderChan := time.Tick(time.Second * 10)
-	go sendReminder(bot, channelFromName[CHANNEL_NAME_BOTCMDS].ID, reminderChan)
+	// Check every 5 minutes
+	reminderChan := time.Tick(time.Minute * 5)
+	go sendReminder(bot, reminderChan)
 }
 
 func addHandlers() {
@@ -72,10 +71,4 @@ func addHandlers() {
 func addIntents() {
 	bot.Identify.Intents = discordgo.IntentsGuildMessages |
 		discordgo.IntentsGuildMembers
-}
-
-func sendReminder(s *discordgo.Session, channelID string, ch <-chan time.Time) {
-	for range ch {
-		s.ChannelMessageSend(channelID, "Namaste")
-	}
 }
