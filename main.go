@@ -14,8 +14,6 @@ import (
 
 var bot *discordgo.Session
 var TOKEN string
-var timeslotMap map[string]*Timeslot
-var classes []*Class
 
 // Initializes the bot on package initialization
 func init() {
@@ -60,7 +58,8 @@ func ready(s *discordgo.Session, r *discordgo.Ready) {
 	if err != nil {
 		return
 	}
-	reminderChan := time.Tick(time.Second * 10)
+	// Check every 5 minutes
+	reminderChan := time.Tick(time.Minute * 5)
 	go sendReminder(bot, reminderChan)
 }
 
