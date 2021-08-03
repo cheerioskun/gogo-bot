@@ -67,9 +67,11 @@ func (ts *Timeslot) parseTime() error {
 	return nil
 }
 
-func (ts *Timeslot) isActive() bool {
-	now := time.Now()
+func (ts *Timeslot) isComingUp() bool {
+	// Check for 5 minutes from now
+	now := time.Now().Add(time.Minute * 5)
 	nowHour, nowMinute := now.Local().Hour(), now.Local().Minute()
+	// Check if it falls within start + 5 minutes. This will only happen once if we're checking every 5 minutes
 	return (ts.startHour <= nowHour && ts.startMinute <= nowMinute) &&
-		(ts.endHour >= nowHour && ts.endMinute > nowMinute)
+		(ts.startMinute+5 > nowMinute)
 }
