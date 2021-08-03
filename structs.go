@@ -9,8 +9,8 @@ import (
 )
 
 type Timeslot struct {
-	startTimeString string `json:start_time`
-	endTimeString   string `json:end_time`
+	StartTimeString string `json:"start_time"`
+	EndTimeString   string `json:"end_time"`
 	startHour       int
 	startMinute     int
 	endHour         int
@@ -18,24 +18,24 @@ type Timeslot struct {
 }
 
 type Class struct {
-	ClassType        string `json:type`
-	SubjectName      string `json:subject`
-	SubjectShorthand string `json:shortname`
-	Weekday          string `json:day`
-	TimeslotNos      []int  `json:timeslots`
+	ClassType        string `json:"type"`
+	SubjectName      string `json:"subject"`
+	SubjectShorthand string `json:"shortname"`
+	Weekday          string `json:"day"`
+	TimeslotNos      []int  `json:"timeslots"`
 	Timeslots        []*Timeslot
-	Sections         []string `json:sections`
-	FacultyName      string   `json:faculty_name`
-	MeetLink         string   `json:meet_link`
+	Sections         []string `json:"sections"`
+	FacultyName      string   `json:"faculty_name"`
+	MeetLink         string   `json:"meet_link"`
 }
 
 func (ts *Timeslot) parseTime() error {
-	if ts.startTimeString == "" || ts.endTimeString == "" {
+	if ts.StartTimeString == "" || ts.EndTimeString == "" {
 		log.Printf("timeslots in db not valid")
 		return fmt.Errorf("timeslot object is invalid")
 	}
-	startTimeArray := strings.Split(ts.startTimeString, ":")
-	endTimeArray := strings.Split(ts.endTimeString, ":")
+	startTimeArray := strings.Split(ts.StartTimeString, ":")
+	endTimeArray := strings.Split(ts.EndTimeString, ":")
 	if len(startTimeArray) != 2 || len(endTimeArray) != 2 {
 		log.Printf("timeslots in db not valid")
 		return fmt.Errorf("timeslot object is invalid")
