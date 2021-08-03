@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 
 	"github.com/bwmarrin/discordgo"
 	"github.com/profclems/go-dotenv"
@@ -27,6 +28,7 @@ func init() {
 	}
 	addHandlers()
 	addIntents()
+
 }
 
 func main() {
@@ -36,7 +38,6 @@ func main() {
 		fmt.Println("error opening connection,", err)
 		return
 	}
-
 	// Wait here until CTRL-C or other term signal is received.
 	fmt.Println("Bot is now running.  Press CTRL-C to exit.")
 	sc := make(chan os.Signal, 1)
@@ -50,6 +51,12 @@ func main() {
 
 func ready(s *discordgo.Session, r *discordgo.Ready) {
 	log.Println("Bot is up!")
+	err := processChannelMap(s)
+	if err != nil {
+		return
+	}
+	reminderChan := time.Tick(time.Second * 10)
+	go sendReminder(bot, channelFromName[CHANNEL_NAME_BOTCMDS].ID, reminderChan)
 }
 
 func addHandlers() {
@@ -60,4 +67,10 @@ func addHandlers() {
 func addIntents() {
 	bot.Identify.Intents = discordgo.IntentsGuildMessages |
 		discordgo.IntentsGuildMembers
+}
+
+func sendReminder(s *discordgo.Session, channelID string, ch <-chan time.Time) {
+	for range ch {
+		s.ChannelMessageSend(channelID, "Namaste")
+	}
 }
