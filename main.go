@@ -79,7 +79,6 @@ func makeRemindStringFromClass(class *Class) string {
 	for _, role := range class.Sections {
 		allRelevantRoles += roleNameToRoleId[role] + "\n"
 	}
-	fmt.Println(allRelevantRoles)
 	return fmt.Sprintf("%s%s for %s is starting soon!\nHere's the link to join: %s",
 		allRelevantRoles,
 		class.ClassType,
