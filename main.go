@@ -18,6 +18,7 @@ var bot *discordgo.Session
 var TOKEN string
 var timeslotMap map[string]*Timeslot
 var classes []*Class
+var roleNameToRoleId map[string]string
 
 // Initializes the bot on package initialization
 func init() {
@@ -31,6 +32,7 @@ func init() {
 		log.Fatalf("Invalid bot parameters: %v", err)
 	}
 
+	mapRoles()
 	unmarshalTimeSlots()
 	unmarshalClasses()
 	addHandlers()
@@ -125,4 +127,28 @@ func sendReminder(s *discordgo.Session, channelID string, ch <-chan time.Time) {
 	for range ch {
 		s.ChannelMessageSend(channelID, "Namaste")
 	}
+}
+
+func makeRemindStringFromClass(class Class) string {
+	allRelevantRoles := ""
+	for _, role := range class.Sections {
+		allRelevantRoles += roleNameToRoleId[role] + "\n"
+	}
+	return fmt.Sprintf("%s\n%s for %s is starting soon!\nHere's the link to join: %s",
+		allRelevantRoles,
+		class.ClassType,
+		class.SubjectName, class.MeetLink)
+}
+
+func mapRoles() {
+	// rolesPairs := [8](PairString){{"it-a", "ROLE_IT_A"}, {"it-b", "ROLE_IT_B"},
+	// 	{"it-1", "ROLE_IT_1"}, {"it-2", "ROLE_IT_2"},
+	// 	{"it-3", "ROLE_IT_3"}, {"it-4", "ROLE_IT_4"},
+	// 	{"it-5", "ROLE_IT_5"}, {"it-6", "ROLE_IT_6"}}
+	fmt.Println(dotenv.GetString("ROLE_IT_A"))
+	// for _, rolePair := range rolesPairs {
+	// 	fmt.Println(rolePair.roleEnvName)
+	// 	roleNameToRoleId[rolePair.roleName] = dotenv.GetString(rolePair.roleEnvName)
+	// }
+	fmt.Println(roleNameToRoleId)
 }
