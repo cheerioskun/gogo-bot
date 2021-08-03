@@ -13,18 +13,13 @@ var classes []*Class
 func unmarshalTimeSlots() {
 	var timeslotPath = "data/timeslots.json"
 	jsonFile, err := os.Open(timeslotPath)
-
 	if err != nil {
 		log.Fatalf("Error in opening timeslot json file, %v.", err)
 	}
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 	json.Unmarshal(byteValue, &timeslotMap)
-
-	// Testing, will remove before going into production
 	for _, v := range timeslotMap {
-		// Before Parsing for Testing => fmt.Println(v)
 		v.parseTime()
-		// After Parsing for Testing => fmt.Println(v)
 	}
 }
 
@@ -44,11 +39,11 @@ func unmarshalClasses() {
 			byteValue, _ := ioutil.ReadAll(jsonFile)
 			json.Unmarshal(byteValue, &classesForOneDayForOneSection)
 			for _, class := range classesForOneDayForOneSection {
-				// fmt.Println(class)
+
 				for _, timeslotNo := range class.TimeslotNos {
 					class.Timeslots = append(class.Timeslots, timeslotMap[timeslotNo])
 				}
-				// fmt.Println(class, class.Timeslots)
+
 			}
 			classes = append(classes, classesForOneDayForOneSection...)
 		}

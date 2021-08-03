@@ -54,6 +54,7 @@ func main() {
 
 func ready(s *discordgo.Session, r *discordgo.Ready) {
 	log.Println("Bot is up!")
+	// Populate channel name to channel id map for the guild
 	err := processChannelMap(s)
 	if err != nil {
 		return
@@ -65,7 +66,6 @@ func ready(s *discordgo.Session, r *discordgo.Ready) {
 
 func addHandlers() {
 	bot.AddHandler(ready)
-	bot.AddHandler(messageCreate)
 }
 
 func addIntents() {
