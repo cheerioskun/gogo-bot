@@ -1,0 +1,62 @@
+[
+	{
+		"type": "lecture",
+		"subject": "Machine Learning",
+		"shortname": "ml",
+		"day": "Wednesday",
+		"timeslots": ["1"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "Mukesh",
+		"meet_link": "https://meet.google.com/sjz-kqyu-xvb"
+	},
+	{
+		"type": "lecture",
+		"subject": "Compiler Design",
+		"shortname": "pe",
+		"day": "Wednesday",
+		"timeslots": ["3"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "Ankit Jain",
+		"meet_link": "https://meet.google.com/yeb-rzuu-mdk"
+	},
+	{
+		"type": "lecture",
+		"subject": "Open Elective",
+		"shortname": "oe",
+		"day": "Wednesday",
+		"timeslots": ["4"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "variable",
+		"meet_link": "variable"
+	},
+	{
+		"type": "lecture",
+		"subject": "Business Management",
+		"shortname": "bm",
+		"day": "Wednesday",
+		"timeslots": ["5"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "Vikas Choudhary",
+		"meet_link": "https://meet.google.com/lookup/dsxub5tolp"
+	},
+	{
+		"type": "lecture",
+		"subject": "Business Management",
+		"shortname": "bm",
+		"day": "Wednesday",
+		"timeslots": ["6"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "GeetaSachdeva/GeetKapilArora",
+		"meet_link": "https://meet.google.com/gnu-vfcd-dsn"
+	},
+	{
+		"type": "lab",
+		"subject": "Advanced Data Structures and Algorithms",
+		"shortname": "adsa",
+		"day": "Wednesday",
+		"timeslots": ["8"],
+		"sections": ["it-4", "it-6"],
+		"faculty_name": "Mamtesh",
+		"meet_link": "Unknown"
+	}
+]
