@@ -2,7 +2,7 @@ package main
 
 import (
 	"log"
-	"strconv"
+	"strings"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -28,16 +28,23 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 			log.Printf("could not get list of server roles: %v", err)
 			return
 		}
+		roleNameFromID := make(map[string]string)
+		for _, role := range guildRoles {
+			roleNameFromID[role.ID] = role.Name
+		}
 		roleIDs := m.Member.Roles
 		roles := make(map[string]bool)
+		var roleList []string
 		for _, id := range roleIDs {
-			idint, err := strconv.Atoi(id)
 			if err != nil {
 				log.Printf("could not convert string to integer: %v", err)
 				return
 			}
-			roles[guildRoles[idint].Name] = true
+			roleList = append(roleList, roleNameFromID[id])
+			roles[roleNameFromID[id]] = true
 		}
+		s.ChannelMessageSend(m.ChannelID, strings.Join(roleList, " & "))
+
 		// Now we can check against the roles map for existence
 	}
 }
