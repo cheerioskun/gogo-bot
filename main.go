@@ -68,9 +68,3 @@ func addIntents() {
 	bot.Identify.Intents = discordgo.IntentsGuildMessages |
 		discordgo.IntentsGuildMembers
 }
-
-func sendReminder(s *discordgo.Session, channelID string, ch <-chan time.Time) {
-	for range ch {
-		s.ChannelMessageSend(channelID, "Namaste")
-	}
-}

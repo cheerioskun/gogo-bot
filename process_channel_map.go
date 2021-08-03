@@ -8,15 +8,8 @@ import (
 )
 
 var channelFromName = make(map[string]*discordgo.Channel)
-var itGuild *discordgo.Guild
 
 func processChannelMap(s *discordgo.Session) error {
-	var err error
-	itGuild, err = s.Guild(IT_SERVER_GUILDID)
-	if err != nil {
-		log.Printf("could not get guild from id: %q", err)
-		return err
-	}
 	channels, err := s.GuildChannels(IT_SERVER_GUILDID)
 	if err != nil {
 		log.Printf("could not get guild channels: %q", err)
