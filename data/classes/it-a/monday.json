@@ -1,35 +1,32 @@
-{
-    "classes": [
-       {
-            "type": "lecture",
-            "subject": "Compiler Design",
-            "shortname": "pe",
-            "day": "Monday",
-            "timeslots": ["2"],
-            "sections": ["it-a", "it-1", "it-2", "it-3"],
-            "faculty_name": "Ankit Jain",
-            "meet_link": "https://meet.google.com/xqo-xnth-ipi"
-       },
-       {
-            "type": "lab",
-            "subject": "Advanced Data Structures and Algorithms",
-            "shortname": "adsa",
-            "day": "Monday",
-            "timeslots": ["3", "4"],
-            "sections": ["it-1"],
-            "faculty_name": "M K Murmu",
-            "meet_link": "meet.google.com/raw-knuf-epo"
-       },
-       {
-            "type": "lecture",
-            "subject": "Open Elective",
-            "shortname": "oe",
-            "day": "Monday",
-            "timeslots": ["8"],
-            "sections": ["it-a", "it-1", "it-2", "it-3"],
-            "faculty_name": "variable",
-            "meet_link": "variable"
-       }
-       
-    ]
- }
+[
+     {
+          "type": "lecture",
+          "subject": "Compiler Design",
+          "shortname": "pe",
+          "day": "Monday",
+          "timeslots": ["2"],
+          "sections": ["it-a", "it-1", "it-2", "it-3"],
+          "faculty_name": "Ankit Jain",
+          "meet_link": "https://meet.google.com/xqo-xnth-ipi"
+     },
+     {
+          "type": "lab",
+          "subject": "Advanced Data Structures and Algorithms",
+          "shortname": "adsa",
+          "day": "Monday",
+          "timeslots": ["3", "4"],
+          "sections": ["it-1"],
+          "faculty_name": "M K Murmu",
+          "meet_link": "meet.google.com/raw-knuf-epo"
+     },
+     {
+          "type": "lecture",
+          "subject": "Open Elective",
+          "shortname": "oe",
+          "day": "Monday",
+          "timeslots": ["8"],
+          "sections": ["it-a", "it-1", "it-2", "it-3"],
+          "faculty_name": "variable",
+          "meet_link": "variable"
+     }
+]
