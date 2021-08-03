@@ -6,8 +6,8 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
-func sendReminder(s *discordgo.Session, channelID string, ch <-chan time.Time) {
+func sendReminder(s *discordgo.Session, ch <-chan time.Time) {
 	for range ch {
-		s.ChannelMessageSend(channelID, "Namaste")
+		// Add logic to check time and do
 	}
 }

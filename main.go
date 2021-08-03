@@ -56,7 +56,7 @@ func ready(s *discordgo.Session, r *discordgo.Ready) {
 		return
 	}
 	reminderChan := time.Tick(time.Second * 10)
-	go sendReminder(bot, channelFromName[CHANNEL_NAME_BOTCMDS].ID, reminderChan)
+	go sendReminder(bot, reminderChan)
 }
 
 func addHandlers() {
