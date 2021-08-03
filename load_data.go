@@ -7,12 +7,9 @@ import (
 	"os"
 )
 
-<<<<<<< HEAD
-=======
 var timeslotMap map[string]*Timeslot
 var classes []*Class
 
->>>>>>> 122074c86b00ab89959d2ebc011e48428b78ff6e
 func unmarshalTimeSlots() {
 	var timeslotPath = "data/timeslots.json"
 	jsonFile, err := os.Open(timeslotPath)
