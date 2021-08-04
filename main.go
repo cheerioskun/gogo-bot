@@ -76,27 +76,3 @@ func addIntents() {
 	bot.Identify.Intents = discordgo.IntentsGuildMessages |
 		discordgo.IntentsGuildMembers
 }
-
-func makeRemindStringFromClass(class *Class) string {
-	allRelevantRoles := ""
-	for _, role := range class.Sections {
-		allRelevantRoles += fmt.Sprintf("<@&%s> ", roleNameToRoleId[role])
-	}
-	return fmt.Sprintf("%s\n%s for %s is starting soon!\nHere's the link to join: %s",
-		allRelevantRoles,
-		class.ClassType,
-		class.SubjectName, class.MeetLink)
-}
-
-func mapRoles(s *discordgo.Session) error {
-
-	roles, err := s.GuildRoles(IT_SERVER_GUILDID)
-	if err != nil {
-		log.Fatalf("could not get roles from server: %q", err)
-		return err
-	}
-	for _, role := range roles {
-		roleNameToRoleId[role.Name] = role.ID
-	}
-	return nil
-}

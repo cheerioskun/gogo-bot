@@ -29,7 +29,7 @@ func sendReminder(s *discordgo.Session, ch <-chan time.Time) {
 			}
 			if toRemind {
 				log.Printf("Time to remind!")
-				contentstring := makeRemindStringFromClass(class)
+				contentstring := makeRemindString(class)
 				s.ChannelMessageSend(linkChannelID, contentstring)
 			}
 		}

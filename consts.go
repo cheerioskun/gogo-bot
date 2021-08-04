@@ -7,4 +7,5 @@ const (
 	CHANNEL_NAME_BOTCMDS       = "bot-commands"
 	IT_SERVER_GUILDID          = "869463111600574505"
 	CHANNEL_NAME_LINKS         = "class-links"
+	REMINDER_INTRO             = "🔫🚨HANDSUP🚨🔫"
 )
