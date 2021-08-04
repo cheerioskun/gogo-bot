@@ -27,7 +27,6 @@ func init() {
 		log.Fatalf("Invalid bot parameters: %v", err)
 	}
 
-	mapRoles()
 	unmarshalTimeSlots()
 	unmarshalClasses()
 	addHandlers()
@@ -60,6 +59,10 @@ func ready(s *discordgo.Session, r *discordgo.Ready) {
 	if err != nil {
 		return
 	}
+	err = mapRoles(s)
+	if err != nil {
+		return
+	}
 	// Check every 5 minutes
 	reminderChan := time.Tick(time.Minute * 5)
 	go sendReminder(bot, reminderChan)
@@ -77,22 +80,23 @@ func addIntents() {
 func makeRemindStringFromClass(class *Class) string {
 	allRelevantRoles := ""
 	for _, role := range class.Sections {
-		allRelevantRoles += roleNameToRoleId[role] + "\n"
+		allRelevantRoles += fmt.Sprintf("<@&%s> ", roleNameToRoleId[role])
 	}
-	return fmt.Sprintf("%s%s for %s is starting soon!\nHere's the link to join: %s",
+	return fmt.Sprintf("%s\n%s for %s is starting soon!\nHere's the link to join: %s",
 		allRelevantRoles,
 		class.ClassType,
 		class.SubjectName, class.MeetLink)
 }
 
-func mapRoles() {
-	roleNameToRoleId = make(map[string]string)
-	rolesPairs := [8](PairString){{"it-a", "ROLE_IT_A"}, {"it-b", "ROLE_IT_B"},
-		{"it-1", "ROLE_IT_1"}, {"it-2", "ROLE_IT_2"},
-		{"it-3", "ROLE_IT_3"}, {"it-4", "ROLE_IT_4"},
-		{"it-5", "ROLE_IT_5"}, {"it-6", "ROLE_IT_6"}}
-	for _, rolePair := range rolesPairs {
-		fmt.Println(rolePair.roleEnvName)
-		roleNameToRoleId[rolePair.roleName] = dotenv.GetString(rolePair.roleEnvName)
+func mapRoles(s *discordgo.Session) error {
+
+	roles, err := s.GuildRoles(IT_SERVER_GUILDID)
+	if err != nil {
+		log.Fatalf("could not get roles from server: %q", err)
+		return err
 	}
+	for _, role := range roles {
+		roleNameToRoleId[role.Name] = role.ID
+	}
+	return nil
 }
