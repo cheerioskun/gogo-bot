@@ -73,5 +73,6 @@ func (ts *Timeslot) isComingUp() bool {
 	nowHour, nowMinute := now.Local().Hour(), now.Local().Minute()
 	// Check if it falls within start + 5 minutes. This will only happen once if we're checking every 5 minutes
 	return (ts.startHour <= nowHour && ts.startMinute <= nowMinute) &&
-		(ts.startMinute+5 > nowMinute)
+		(ts.startMinute+5 > nowMinute) &&
+		(ts.endHour > nowHour)
 }
