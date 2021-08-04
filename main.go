@@ -12,8 +12,13 @@ import (
 	"github.com/profclems/go-dotenv"
 )
 
-var bot *discordgo.Session
-var TOKEN string
+var (
+	bot                  *discordgo.Session
+	TOKEN                string
+	prefixChar           string
+	scheduleCommand      string
+	scheduleCommandUsage string
+)
 
 // Initializes the bot on package initialization
 func init() {
@@ -26,9 +31,9 @@ func init() {
 	if err != nil {
 		log.Fatalf("Invalid bot parameters: %v", err)
 	}
-
 	unmarshalTimeSlots()
 	unmarshalClasses()
+	prepareCommandsAndUsages()
 	addHandlers()
 	addIntents()
 
@@ -59,6 +64,7 @@ func ready(s *discordgo.Session, r *discordgo.Ready) {
 	if err != nil {
 		return
 	}
+	prefixChar = dotenv.GetString("PREFIX")
 	err = mapRoles(s)
 	if err != nil {
 		return
