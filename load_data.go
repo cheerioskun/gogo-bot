@@ -9,6 +9,7 @@ import (
 
 var timeslotMap map[string]*Timeslot
 var classes []*Class
+var roleNameToRoleId map[string]string
 
 func unmarshalTimeSlots() {
 	var timeslotPath = "data/timeslots.json"
