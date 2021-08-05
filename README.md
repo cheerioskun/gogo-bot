@@ -5,6 +5,6 @@ _Aaya hai to link bata kar hi jayega_
 
 ### How to build
 
-Ensure you have Go^1.15 installed on your system. Inside the project directory, run the following command
-`make`
+Run `docker build . -t gogo-bot` and then use `docker run gogo-bot`
+Manually populate the .env inside the docker container with the auth token for the bot
 
