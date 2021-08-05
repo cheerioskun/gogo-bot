@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func contains(list []string, sublist []string) bool {
+func anyCommon(list []string, sublist []string) bool {
 	for _, v1 := range sublist {
 		for _, v2 := range list {
 			if v1 == roleNameToRoleId[v2] {
@@ -14,7 +14,7 @@ func contains(list []string, sublist []string) bool {
 	return false
 }
 
-func make_generic_class_string(class *Class) string {
+func (class *Class) make_generic_class_string() string {
 	startTime := class.Timeslots[0].StartTimeString
 	endTime := class.Timeslots[len(class.Timeslots)-1].EndTimeString
 	return fmt.Sprintf("Type: %s\nSubject: %s (%s)\nTime: %s-%s\nFaculty Name: %s\nMeet Link: <%s>\n",

@@ -5,11 +5,11 @@ import (
 )
 
 func getScheduleForADay(roles []string, weekDay string) []*Class {
-	var classesForReqiredDay []*Class
+	var classesForRequiredDay []*Class
 	for _, class := range classes {
-		if class.Weekday == strings.Title(weekDay) && contains(class.Sections, roles) {
-			classesForReqiredDay = append(classesForReqiredDay, class)
+		if class.Weekday == strings.Title(weekDay) && anyCommon(class.Sections, roles) {
+			classesForRequiredDay = append(classesForRequiredDay, class)
 		}
 	}
-	return classesForReqiredDay
+	return classesForRequiredDay
 }
