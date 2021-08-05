@@ -17,6 +17,7 @@ var (
 	TOKEN                string
 	prefixChar           string
 	scheduleCommand      string
+	schCommand           string
 	scheduleCommandUsage string
 )
 
@@ -36,7 +37,6 @@ func init() {
 	prepareCommandsAndUsages()
 	addHandlers()
 	addIntents()
-
 }
 
 func main() {
@@ -76,6 +76,7 @@ func ready(s *discordgo.Session, r *discordgo.Ready) {
 
 func addHandlers() {
 	bot.AddHandler(ready)
+	bot.AddHandler(messageCreate)
 }
 
 func addIntents() {

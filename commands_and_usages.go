@@ -1,8 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/profclems/go-dotenv"
+)
 
 func prepareCommandsAndUsages() {
+	prefixChar = dotenv.GetString("PREFIX")
 	scheduleCommand = prefixChar + "schedule"
-	scheduleCommandUsage = fmt.Sprintf("Command Name: %s\nUsage: %sschedule <Day>\nHere day can be any of 5 weekdays and is optional with default value of present day\n.", scheduleCommand, prefixChar)
+	schCommand = prefixChar + "sch"
+	scheduleCommandUsage = fmt.Sprintf("Command Name: %s\nUsage: %s <Day> or %s <Day>\nHere day can be any of 5 weekdays and is optional with default value of present day.\n", scheduleCommand, scheduleCommand, schCommand)
 }
