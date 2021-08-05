@@ -13,12 +13,8 @@ import (
 )
 
 var (
-	bot                  *discordgo.Session
-	TOKEN                string
-	prefixChar           string
-	scheduleCommand      string
-	schCommand           string
-	scheduleCommandUsage string
+	bot   *discordgo.Session
+	TOKEN string
 )
 
 // Initializes the bot on package initialization
@@ -34,7 +30,6 @@ func init() {
 	}
 	unmarshalTimeSlots()
 	unmarshalClasses()
-	prepareCommandsAndUsages()
 	addHandlers()
 	addIntents()
 }
@@ -64,7 +59,6 @@ func ready(s *discordgo.Session, r *discordgo.Ready) {
 	if err != nil {
 		return
 	}
-	prefixChar = dotenv.GetString("PREFIX")
 	err = mapRoles(s)
 	if err != nil {
 		return
