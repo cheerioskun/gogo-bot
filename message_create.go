@@ -13,7 +13,8 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		return
 	}
 
-	if strings.HasPrefix(m.Content, SCHEDULE_COMMAND) || strings.HasPrefix(m.Content, SCH_COMMAND) {
+	if (strings.HasPrefix(m.Content, SCHEDULE_COMMAND) || strings.HasPrefix(m.Content, SCH_COMMAND)) &&
+		(m.ChannelID == channelFromName[CHANNEL_NAME_PlAYGROUND].ID) {
 		res := strings.Split(m.Content, " ")
 		var day string
 		if len(res) > 2 {
