@@ -7,9 +7,11 @@ import (
 	"os"
 )
 
-var timeslotMap = make(map[string]*Timeslot)
-var classes []*Class
-var roleNameToRoleId = make(map[string]string)
+var (
+	timeslotMap      = make(map[string]*Timeslot)
+	classes          []*Class
+	roleNameToRoleId = make(map[string]string)
+)
 
 func unmarshalTimeSlots() {
 	var timeslotPath = "data/timeslots.json"

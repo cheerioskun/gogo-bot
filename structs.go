@@ -8,9 +8,6 @@ import (
 	"time"
 )
 
-type PairString struct {
-	roleName, roleEnvName string
-}
 type Timeslot struct {
 	StartTimeString string `json:"start_time"`
 	EndTimeString   string `json:"end_time"`

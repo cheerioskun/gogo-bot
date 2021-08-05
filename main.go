@@ -12,8 +12,10 @@ import (
 	"github.com/profclems/go-dotenv"
 )
 
-var bot *discordgo.Session
-var TOKEN string
+var (
+	bot   *discordgo.Session
+	TOKEN string
+)
 
 // Initializes the bot on package initialization
 func init() {
@@ -26,12 +28,10 @@ func init() {
 	if err != nil {
 		log.Fatalf("Invalid bot parameters: %v", err)
 	}
-
 	unmarshalTimeSlots()
 	unmarshalClasses()
 	addHandlers()
 	addIntents()
-
 }
 
 func main() {
@@ -70,6 +70,7 @@ func ready(s *discordgo.Session, r *discordgo.Ready) {
 
 func addHandlers() {
 	bot.AddHandler(ready)
+	bot.AddHandler(messageCreate)
 }
 
 func addIntents() {
