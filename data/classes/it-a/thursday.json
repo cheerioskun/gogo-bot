@@ -11,11 +11,11 @@
     },
     {
         "type": "lab",
-        "subject": "Machine Learning",
+        "subject": "Advanced Data Structures and Algorithms",
         "shortname": "ml",
         "day": "Thursday",
         "timeslots": ["7", "8"],
-        "sections": ["it-1"],
+        "sections": ["it-2"],
         "faculty_name": "Unknown",
         "meet_link": "Unknown"
     }

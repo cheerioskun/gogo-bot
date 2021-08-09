@@ -36,8 +36,8 @@
           "day": "Wednesday",
           "timeslots": ["4"],
           "sections": ["it-a", "it-1", "it-2", "it-3"],
-          "faculty_name": "variable",
-          "meet_link": "variable"
+          "faculty_name": "Metals & Alloys(Vikas Ghule)\nIntro To Comm. Engg.(Faculty Unknown)",
+		"meet_link": " Metal & Alloy: https://meet.google.com/zxa-zhzr-nqw \n Intro To Comm. Engg.: Not constant"
      },
      {
           "type": "lecture",
@@ -47,6 +47,16 @@
           "timeslots": ["5"],
           "sections": ["it-a", "it-1", "it-2", "it-3"],
           "faculty_name": "Vikas Choudhary",
-          "meet_link": "https://meet.google.com/lookup/gnajwy7z3z"
-     }
+          "meet_link": "https://classroom.google.com/c/Mzc2NTc2MDg0MDYw?cjc=mvnlmdi"
+     },
+     {
+          "type": "lab",
+          "subject": "Machine Learning",
+          "shortname": "ml",
+          "day": "Wednesday",
+          "timeslots": ["7", "8"],
+          "sections": ["it-1", "it-2"],
+          "faculty_name": "Unknown",
+          "meet_link": "Unknown"
+      }
 ]

@@ -16,8 +16,8 @@
 		"day": "Friday",
 		"timeslots": ["3"],
 		"sections": ["it-b", "it-4", "it-5", "it-6"],
-		"faculty_name": "variable",
-		"meet_link": "variable"
+		"faculty_name": "Metals & Alloys(Vikas Ghule)\nIntro To Comm. Engg.(Faculty Unknown)",
+		"meet_link": " Metal & Alloy: https://meet.google.com/tsd-fzhn-jif \n Intro To Comm. Engg.: Not constant"
 	},
 	{
 		"type": "lecture",
@@ -27,6 +27,6 @@
 		"timeslots": ["6"],
 		"sections": ["it-b", "it-4", "it-5", "it-6"],
 		"faculty_name": "Mukesh",
-		"meet_link": "https://meet.google.com/sjz-kqyu-xvb"
+		"meet_link": "https://meet.google.com/pfq-ihjz-din"
 	}
 ]
