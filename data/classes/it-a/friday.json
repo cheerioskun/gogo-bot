@@ -16,8 +16,8 @@
           "day": "Friday",
           "timeslots": ["3"],
           "sections": ["it-a", "it-1", "it-2", "it-3"],
-          "faculty_name": "Metals & Alloys(Vikas Ghule)\nIntro To Comm. Engg.(Faculty Unknown)",
-		"meet_link": " Metal & Alloy: https://meet.google.com/tsd-fzhn-jif \n Intro To Comm. Engg.: Not constant"
+          "faculty_name": "\nMetals & Alloys: Vikas Ghule \nDraught & Flood: Faculty Unknown",
+		"meet_link": "\nMetals & Alloys: https://meet.google.com/tsd-fzhn-jif \nDraught & Flood: No Meet Link"
      },
      {
           "type": "lecture",
