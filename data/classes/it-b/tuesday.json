@@ -21,6 +21,16 @@
 	},
 	{
 		"type": "lecture",
+		"subject": "Human Computer Interaction",
+		"shortname": "hci",
+		"day": "Tuesday",
+		"timeslots": ["6"],
+		"sections": ["it-b", "it-4", "it-5", "it-6"],
+		"faculty_name": "Ruby",
+		"meet_link": "https://meet.google.com/cng-wyhn-yci"
+	},
+	{
+		"type": "lecture",
 		"subject": "Advanced Data Structures and Algorithms",
 		"shortname": "adsa",
 		"day": "Tuesday",
