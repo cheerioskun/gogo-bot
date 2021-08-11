@@ -1,0 +1,25 @@
+name: Deployment Pipeline
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Open-SSH Client
+        run: which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
+      - name: Checkout Repository # clone the repo
+        uses: actions/checkout@v2
+      - name: Decrypt pem file
+        env:
+          SSH_PEM_DECRYPT_KEY: ${{ secrets.SSH_PEM_DECRYPT_KEY }}
+        run: |
+          chmod +x ./deploy/decrypt_pem.sh
+          ./deploy/decrypt_pem.sh
+      - name: Run Deploy Script
+        env:
+          DEPLOY_SERVERS: ${{ secrets.DEPLOY_SERVERS }}
+        run: bash ./deploy/configure_deploy.sh
