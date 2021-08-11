@@ -4,6 +4,8 @@
 set -e
 cd ~/projects/gogo-bot
 
+#update repo
+git pull
 # Stop and remove latest container & image
 sudo docker stop gogo-bot-container
 sudo docker rm gogo-bot-container
