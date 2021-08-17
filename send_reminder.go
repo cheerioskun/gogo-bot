@@ -21,8 +21,9 @@ func sendReminder(s *discordgo.Session, ch <-chan time.Time) {
 				continue
 			}
 			toRemind := false
-			for _, ts := range class.Timeslots {
-				if ts.isComingUp() {
+			for idx, ts := range class.Timeslots {
+				// Only remind on the start of first timeslot
+				if ts.isComingUp() && idx == 0 {
 					toRemind = true
 					break
 				}
