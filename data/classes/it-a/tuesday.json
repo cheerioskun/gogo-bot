@@ -1,6 +1,16 @@
 [
      {
           "type": "lecture",
+          "subject": "Machine Learning",
+          "shortname": "ml",
+          "day": "Tuesday",
+          "timeslots": ["3"],
+          "sections": ["it-a", "it-1", "it-2", "it-3"],
+          "faculty_name": "Mukesh",
+          "meet_link": "https://meet.google.com/dvv-mhsk-ntg"
+     },
+     {
+          "type": "lecture",
           "subject": "Compiler Design",
           "shortname": "pe",
           "day": "Tuesday",
@@ -28,15 +38,5 @@
           "sections": ["it-a", "it-1", "it-2", "it-3"],
           "faculty_name": "Mamtesh",
           "meet_link": "https://meet.google.com/lookup/bvmqwnc5e4"
-     },
-     {
-          "type": "lecture",
-          "subject": "Machine Learning",
-          "shortname": "ml",
-          "day": "Tuesday",
-          "timeslots": ["8"],
-          "sections": ["it-a", "it-1", "it-2", "it-3"],
-          "faculty_name": "r_k_a & Arpesh Ji",
-          "meet_link": "https://meet.google.com/dvv-mhsk-ntg"
      }
 ]
