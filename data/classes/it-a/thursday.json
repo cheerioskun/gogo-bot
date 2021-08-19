@@ -1,5 +1,15 @@
 [
     {
+        "type": "lab",
+        "subject": "Machine Learning",
+        "shortname": "ml",
+        "day": "Thursday",
+        "timeslots": ["1", "2"],
+        "sections": ["it-3"],
+        "faculty_name": "R. K Aggarwal",
+        "meet_link": "variable"
+    },
+    {
         "type": "lecture",
         "subject": "Advanced Data Structures and Algorithms",
         "shortname": "adsa",
